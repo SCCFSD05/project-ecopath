@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoRide - Sustainable Transportation Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bicycle"></i>
+                <span>EcoRide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Login <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="auth.html?type=admin&mode=signin">Admin Login</a>
+                        <a href="auth.html?type=rider&mode=signin">Rider Login</a>
+                        <a href="auth.html?type=user&mode=signin">User Login</a>
+                        <a href="auth.html?type=renter&mode=signin">Renter Login</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Eco-Friendly Transportation</span>
+                </div>
+                <h1>Revolutionizing Urban Mobility</h1>
+                <p class="hero-subtitle">Join India's fastest-growing sustainable transportation network. Book
+                    eco-friendly rides or rent vehicles with zero emissions.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>50K+</strong>
+                        <span>Happy Users</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>25+</strong>
+                        <span>Cities</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>1200+</strong>
+                        <span>Riders</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="openModal('bookRideModal')">
+                        <i class="fas fa-route"></i>
+                        Book Your Ride
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="openModal('rentVehicleModal')">
+                        <i class="fas fa-bicycle"></i>
+                        Rent Vehicle
+                    </button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Safe & Secure</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>24/7 Available</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Affordable Rates</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-bicycle"></i>
+                        <span>Eco Cycles</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-bolt"></i>
+                        <span>Electric Vehicles</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-leaf"></i>
+                        <span>Zero Emissions</span>
+                    </div>
+                    <div class="hero-main-icon">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How EcoRide Works</h2>
+                <p>Get started in just a few simple steps</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Sign Up</h3>
+                    <p>Create your account and choose your role - User, Rider, or Vehicle Owner</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Find & Book</h3>
+                    <p>Search for available rides or vehicles in your area and book instantly</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Ride & Enjoy</h3>
+                    <p>Enjoy your eco-friendly journey and contribute to a cleaner environment</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Rate & Review</h3>
+                    <p>Share your experience and help us maintain quality service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Our Network Section -->
+    <section class="join-network">
+        <div class="container">
+            <div class="network-content">
+                <div class="network-text">
+                    <h2>Join Our Growing Network</h2>
+                    <p>Whether you want to earn money or save the environment, EcoRide has opportunities for everyone.
+                    </p>
+                    <div class="network-options">
+                        <div class="network-option">
+                            <div class="option-icon">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
+                            <div class="option-content">
+                                <h4>Become a Rider</h4>
+                                <p>Earn money by providing eco-friendly rides to users in your city</p>
+                                <a href="auth.html?type=rider&mode=signup" class="btn btn-outline">Join as Rider</a>
+                            </div>
+                        </div>
+                        <div class="network-option">
+                            <div class="option-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="option-content">
+                                <h4>Rent Your Vehicle</h4>
+                                <p>List your cycles or EVs and earn passive income from rentals</p>
+                                <a href="auth.html?type=renter&mode=signup" class="btn btn-outline">Become Owner</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="network-visual">
+                    <div class="network-stats">
+                        <div class="stat-circle">
+                            <div class="stat-number">₹2.5L+</div>
+                            <div class="stat-label">Avg. Monthly Earnings</div>
+                        </div>
+                        <div class="stat-circle">
+                            <div class="stat-number">4.8★</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-bicycle"></i>
+                    <h3>Cycle Rides</h3>
+                    <p>Quick and eco-friendly bicycle rides for short distances</p>
+                    <ul>
+                        <li>₹5 per km</li>
+                        <li>Zero emissions</li>
+                        <li>Health benefits</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electric Vehicle Rides</h3>
+                    <p>Comfortable electric vehicle rides for longer distances</p>
+                    <ul>
+                        <li>₹12 per km</li>
+                        <li>Low emissions</li>
+                        <li>Comfortable seating</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Vehicle Rental</h3>
+                    <p>Rent cycles and EVs for daily, weekly, or monthly use</p>
+                    <ul>
+                        <li>Flexible duration</li>
+                        <li>Affordable rates</li>
+                        <li>Maintenance included</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,200+</h3>
+                    <p>Active Riders</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Cities Covered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Eco-Friendly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About EcoRide</h2>
+                    <p>EcoRide is committed to providing sustainable transportation solutions that reduce carbon
+                        footprint while offering convenient and affordable mobility options.</p>
+                    <p>Our platform connects riders, users, and vehicle owners in an ecosystem that promotes
+                        environmental responsibility and economic efficiency.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Eco-Friendly</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Safe & Secure</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9876543210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@ecoride.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Green Street, Eco City, India</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bicycle"></i>
+                        <span>EcoRide</span>
+                    </div>
+                    <p>Sustainable transportation for a better tomorrow</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Cycle Rides</a></li>
+                        <li><a href="#">EV Rides</a></li>
+                        <li><a href="#">Vehicle Rental</a></li>
+                        <li><a href="#">Corporate Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoRide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="bookRideModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Ride</h2>
+            <form class="modal-form">
+                <input type="text" placeholder="Pickup Location" required>
+                <input type="text" placeholder="Destination" required>
+                <select required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="cycle">Cycle</option>
+                    <option value="ev">Electric Vehicle</option>
+                </select>
+                <input type="datetime-local" required>
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="rentVehicleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rent a Vehicle</h2>
+            <form class="modal-form">
+                <select required>
+                    <option value="">Select Vehicle Type</option>
+                    <option value="cycle">Cycle</option>
+                    <option value="ev">Electric Vehicle</option>
+                </select>
+                <select required>
+                    <option value="">Rental Duration</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                <input type="date" placeholder="Start Date" required>
+                <input type="text" placeholder="Your Location" required>
+                <button type="submit" class="btn btn-primary">Rent Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

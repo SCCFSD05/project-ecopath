@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rider Dashboard - EcoRide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Rider Dashboard</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i
+                                class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#rides" class="nav-link" data-section="rides"><i class="fas fa-route"></i> My Rides</a>
+                    </li>
+                    <li><a href="#earnings" class="nav-link" data-section="earnings"><i class="fas fa-wallet"></i>
+                            Earnings</a></li>
+                    <li><a href="#profile" class="nav-link" data-section="profile"><i class="fas fa-user"></i>
+                            Profile</a></li>
+                    <li><a href="#vehicle" class="nav-link" data-section="vehicle"><i class="fas fa-bicycle"></i>
+                            Vehicle Info</a></li>
+                    <li><a href="#support" class="nav-link" data-section="support"><i class="fas fa-headset"></i>
+                            Support</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-secondary">Back to Website</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">Rider Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="online-status">
+                        <button class="status-toggle online" id="statusToggle">
+                            <i class="fas fa-circle"></i>
+                            <span>Online</span>
+                        </button>
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Rider">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>156</h3>
+                                <p>Total Rides</p>
+                                <span class="stat-change positive">+8 today</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>₹12,450</h3>
+                                <p>Total Earnings</p>
+                                <span class="stat-change positive">+₹340 today</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>4.8</h3>
+                                <p>Rating</p>
+                                <span class="stat-change positive">+0.1 this week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>6.5h</h3>
+                                <p>Online Today</p>
+                                <span class="stat-change">Target: 8h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Recent Rides</h3>
+                            <div class="ride-list">
+                                <div class="ride-item">
+                                    <div class="ride-info">
+                                        <div class="ride-route">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Airport → City Center</span>
+                                        </div>
+                                        <div class="ride-details">
+                                            <span class="ride-time">2:30 PM</span>
+                                            <span class="ride-earning">₹85</span>
+                                        </div>
+                                    </div>
+                                    <div class="ride-status completed">Completed</div>
+                                </div>
+                                <div class="ride-item">
+                                    <div class="ride-info">
+                                        <div class="ride-route">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Mall → University</span>
+                                        </div>
+                                        <div class="ride-details">
+                                            <span class="ride-time">1:15 PM</span>
+                                            <span class="ride-earning">₹45</span>
+                                        </div>
+                                    </div>
+                                    <div class="ride-status completed">Completed</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Today's Goals</h3>
+                            <div class="goals-list">
+                                <div class="goal-item">
+                                    <div class="goal-info">
+                                        <span>Complete 10 rides</span>
+                                        <span class="goal-progress">8/10</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-info">
+                                        <span>Earn ₹500</span>
+                                        <span class="goal-progress">₹340/₹500</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 68%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Rides Section -->
+                <section id="rides" class="content-section">
+                    <div class="section-header">
+                        <h2>My Rides</h2>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Rides</option>
+                                <option>Today</option>
+                                <option>This Week</option>
+                                <option>This Month</option>
+                            </select>
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Ride ID</th>
+                                    <th>Route</th>
+                                    <th>Distance</th>
+                                    <th>Duration</th>
+                                    <th>Earning</th>
+                                    <th>Customer Rating</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#R1001</td>
+                                    <td>Airport → City Center</td>
+                                    <td>12.5 km</td>
+                                    <td>25 min</td>
+                                    <td>₹85</td>
+                                    <td>5 ⭐</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>2024-01-20</td>
+                                </tr>
+                                <tr>
+                                    <td>#R1002</td>
+                                    <td>Mall → University</td>
+                                    <td>8.2 km</td>
+                                    <td>18 min</td>
+                                    <td>₹45</td>
+                                    <td>4 ⭐</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>2024-01-20</td>
+                                </tr>
+                                <tr>
+                                    <td>#R1003</td>
+                                    <td>Station → Office Complex</td>
+                                    <td>6.8 km</td>
+                                    <td>15 min</td>
+                                    <td>₹35</td>
+                                    <td>5 ⭐</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>2024-01-19</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Earnings Section -->
+                <section id="earnings" class="content-section">
+                    <div class="section-header">
+                        <h2>Earnings</h2>
+                        <button class="btn btn-primary">Request Payout</button>
+                    </div>
+
+                    <div class="earnings-summary">
+                        <div class="earning-card">
+                            <h3>Today's Earnings</h3>
+                            <div class="earning-amount">₹340</div>
+                            <div class="earning-details">8 rides completed</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>This Week</h3>
+                            <div class="earning-amount">₹2,150</div>
+                            <div class="earning-details">45 rides completed</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>This Month</h3>
+                            <div class="earning-amount">₹8,750</div>
+                            <div class="earning-details">156 rides completed</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>Available Balance</h3>
+                            <div class="earning-amount">₹1,250</div>
+                            <div class="earning-details">Ready for payout</div>
+                        </div>
+                    </div>
+
+                    <div class="earnings-chart">
+                        <h3>Weekly Earnings Trend</h3>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Earnings chart will be displayed here</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="content-section">
+                    <div class="section-header">
+                        <h2>My Profile</h2>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+
+                    <div class="profile-container">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Profile" class="profile-image">
+                                <div class="profile-info">
+                                    <h3>John Doe</h3>
+                                    <p>Cycle Rider</p>
+                                    <div class="profile-rating">
+                                        <span>4.8 ⭐</span>
+                                        <span>(156 rides)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="detail-group">
+                                    <h4>Personal Information</h4>
+                                    <div class="detail-item">
+                                        <label>Email:</label>
+                                        <span>john.doe@example.com</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone:</label>
+                                        <span>+91 9876543210</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Address:</label>
+                                        <span>123 Green Street, Eco City</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-group">
+                                    <h4>Rider Information</h4>
+                                    <div class="detail-item">
+                                        <label>License Number:</label>
+                                        <span>DL123456789</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Experience:</label>
+                                        <span>2 years</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Join Date:</label>
+                                        <span>January 15, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vehicle Section -->
+                <section id="vehicle" class="content-section">
+                    <div class="section-header">
+                        <h2>Vehicle Information</h2>
+                        <button class="btn btn-primary">Update Vehicle</button>
+                    </div>
+
+                    <div class="vehicle-container">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
+                            <div class="vehicle-details">
+                                <h3>Mountain Bike Pro</h3>
+                                <div class="vehicle-specs">
+                                    <div class="spec-item">
+                                        <label>Type:</label>
+                                        <span>Cycle</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <label>Model:</label>
+                                        <span>Trek X-Caliber 8</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <label>Registration:</label>
+                                        <span>CY123456</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <label>Insurance:</label>
+                                        <span>Valid till Dec 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="maintenance-card">
+                            <h3>Maintenance Schedule</h3>
+                            <div class="maintenance-list">
+                                <div class="maintenance-item">
+                                    <div class="maintenance-info">
+                                        <span>General Service</span>
+                                        <span class="maintenance-date">Due: Feb 15, 2024</span>
+                                    </div>
+                                    <span class="maintenance-status due">Due Soon</span>
+                                </div>
+                                <div class="maintenance-item">
+                                    <div class="maintenance-info">
+                                        <span>Tire Check</span>
+                                        <span class="maintenance-date">Last: Jan 10, 2024</span>
+                                    </div>
+                                    <span class="maintenance-status completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support" class="content-section">
+                    <div class="section-header">
+                        <h2>Support & Help</h2>
+                    </div>
+
+                    <div class="support-container">
+                        <div class="support-options">
+                            <div class="support-card">
+                                <i class="fas fa-phone"></i>
+                                <h3>Call Support</h3>
+                                <p>Get immediate help from our support team</p>
+                                <button class="btn btn-primary">Call Now</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-comments"></i>
+                                <h3>Live Chat</h3>
+                                <p>Chat with our support representatives</p>
+                                <button class="btn btn-primary">Start Chat</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>Email Support</h3>
+                                <p>Send us your queries via email</p>
+                                <button class="btn btn-primary">Send Email</button>
+                            </div>
+                        </div>
+
+                        <div class="faq-section">
+                            <h3>Frequently Asked Questions</h3>
+                            <div class="faq-list">
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>How do I update my availability status?</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>You can toggle your online/offline status using the button in the header.
+                                            When online, you'll receive ride requests.</p>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>When will I receive my earnings?</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p>Earnings are processed weekly. You can request a payout anytime from the
+                                            earnings section.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="rider.js"></script>
+</body>
+
+</html>

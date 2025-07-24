@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renting Dashboard - EcoRide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Renting Dashboard</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i
+                                class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#my-vehicles" class="nav-link" data-section="my-vehicles"><i
+                                class="fas fa-bicycle"></i> My Vehicles</a></li>
+                    <li><a href="#add-vehicle" class="nav-link" data-section="add-vehicle"><i
+                                class="fas fa-plus-circle"></i> Add Vehicle</a></li>
+                    <li><a href="#bookings" class="nav-link" data-section="bookings"><i
+                                class="fas fa-calendar-check"></i> Bookings</a></li>
+                    <li><a href="#earnings" class="nav-link" data-section="earnings"><i class="fas fa-wallet"></i>
+                            Earnings</a></li>
+                    <li><a href="#maintenance" class="nav-link" data-section="maintenance"><i class="fas fa-tools"></i>
+                            Maintenance</a></li>
+                    <li><a href="#profile" class="nav-link" data-section="profile"><i class="fas fa-user-cog"></i>
+                            Profile</a></li>
+                    <li><a href="#support" class="nav-link" data-section="support"><i class="fas fa-headset"></i>
+                            Support</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-secondary">Back to Website</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">Renting Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">4</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Renter">
+                        <span>Mike Brown</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>7</h3>
+                                <p>Total Vehicles</p>
+                                <span class="stat-change">5 Cycles, 2 EVs</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>23</h3>
+                                <p>Active Bookings</p>
+                                <span class="stat-change positive">+3 today</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>₹45,000</h3>
+                                <p>Total Earnings</p>
+                                <span class="stat-change positive">+₹1,200 this week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>4.7</h3>
+                                <p>Average Rating</p>
+                                <span class="stat-change positive">Excellent service</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Recent Bookings</h3>
+                            <div class="booking-list">
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="vehicle-name">Mountain Bike Pro</div>
+                                        <div class="booking-details">
+                                            <span>Alice Johnson</span>
+                                            <span>3 days rental</span>
+                                        </div>
+                                    </div>
+                                    <div class="booking-status active">Active</div>
+                                </div>
+                                <div class="booking-item">
+                                    <div class="booking-info">
+                                        <div class="vehicle-name">Electric Scooter X1</div>
+                                        <div class="booking-details">
+                                            <span>Bob Wilson</span>
+                                            <span>Weekly rental</span>
+                                        </div>
+                                    </div>
+                                    <div class="booking-status active">Active</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Vehicle Performance</h3>
+                            <div class="performance-list">
+                                <div class="performance-item">
+                                    <div class="vehicle-info">
+                                        <span>Mountain Bike Pro</span>
+                                        <span class="utilization">85% utilized</span>
+                                    </div>
+                                    <div class="performance-bar">
+                                        <div class="performance-fill" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="performance-item">
+                                    <div class="vehicle-info">
+                                        <span>Electric Scooter X1</span>
+                                        <span class="utilization">92% utilized</span>
+                                    </div>
+                                    <div class="performance-bar">
+                                        <div class="performance-fill" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Vehicles Section -->
+                <section id="my-vehicles" class="content-section">
+                    <div class="section-header">
+                        <h2>My Vehicles</h2>
+                        <button class="btn btn-primary" onclick="showSection('add-vehicle')">Add New Vehicle</button>
+                    </div>
+
+                    <div class="vehicles-grid">
+                        <div class="vehicle-card">
+                            <div class="vehicle-image">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>Mountain Bike Pro</h3>
+                                <p>Trek X-Caliber 8</p>
+                                <div class="vehicle-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Status:</span>
+                                        <span class="status active">Available</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rate:</span>
+                                        <span>₹50/day</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rating:</span>
+                                        <span>4.8 ⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-actions">
+                                <button class="btn btn-secondary btn-sm">Edit</button>
+                                <button class="btn btn-secondary btn-sm">View Details</button>
+                                <button class="btn btn-danger btn-sm">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-card">
+                            <div class="vehicle-image">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>City Cruiser</h3>
+                                <p>Giant Escape 3</p>
+                                <div class="vehicle-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Status:</span>
+                                        <span class="status rented">Rented</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rate:</span>
+                                        <span>₹40/day</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rating:</span>
+                                        <span>4.6 ⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-actions">
+                                <button class="btn btn-secondary btn-sm">Edit</button>
+                                <button class="btn btn-secondary btn-sm">View Details</button>
+                                <button class="btn btn-danger btn-sm">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-card">
+                            <div class="vehicle-image">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h3>Electric Scooter X1</h3>
+                                <p>Ather 450X</p>
+                                <div class="vehicle-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Status:</span>
+                                        <span class="status active">Available</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rate:</span>
+                                        <span>₹200/day</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Rating:</span>
+                                        <span>4.9 ⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vehicle-actions">
+                                <button class="btn btn-secondary btn-sm">Edit</button>
+                                <button class="btn btn-secondary btn-sm">View Details</button>
+                                <button class="btn btn-danger btn-sm">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Add Vehicle Section -->
+                <section id="add-vehicle" class="content-section">
+                    <div class="section-header">
+                        <h2>Add New Vehicle</h2>
+                    </div>
+
+                    <div class="add-vehicle-container">
+                        <form class="add-vehicle-form">
+                            <div class="form-section">
+                                <h3>Vehicle Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Vehicle Type</label>
+                                        <select required>
+                                            <option value="">Select Type</option>
+                                            <option value="cycle">Cycle</option>
+                                            <option value="electric-vehicle">Electric Vehicle</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Brand</label>
+                                        <input type="text" placeholder="e.g., Trek, Giant, Ather" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Model</label>
+                                        <input type="text" placeholder="e.g., X-Caliber 8, 450X" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Year</label>
+                                        <input type="number" min="2015" max="2024" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea placeholder="Describe your vehicle's features and condition"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Rental Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Daily Rate (₹)</label>
+                                        <input type="number" min="10" placeholder="50" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Weekly Rate (₹)</label>
+                                        <input type="number" min="50" placeholder="300">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Monthly Rate (₹)</label>
+                                        <input type="number" min="200" placeholder="1000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Security Deposit (₹)</label>
+                                        <input type="number" min="100" placeholder="500" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Location & Availability</h3>
+                                <div class="form-group">
+                                    <label>Pickup Location</label>
+                                    <input type="text" placeholder="Enter pickup address" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Available From</label>
+                                        <input type="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Available Until</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <h3>Vehicle Photos</h3>
+                                <div class="photo-upload">
+                                    <div class="upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Click to upload photos or drag and drop</p>
+                                        <input type="file" multiple accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Save as Draft</button>
+                                <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Bookings Section -->
+                <section id="bookings" class="content-section">
+                    <div class="section-header">
+                        <h2>Bookings Management</h2>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Bookings</option>
+                                <option>Active</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Vehicle</th>
+                                    <th>Customer</th>
+                                    <th>Duration</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Start Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#B001</td>
+                                    <td>Mountain Bike Pro</td>
+                                    <td>Alice Johnson</td>
+                                    <td>3 days</td>
+                                    <td>₹150</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>2024-01-20</td>
+                                    <td>
+                                        <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon" title="Contact"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon" title="End Rental"><i class="fas fa-stop"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#B002</td>
+                                    <td>Electric Scooter X1</td>
+                                    <td>Bob Wilson</td>
+                                    <td>1 week</td>
+                                    <td>₹1,400</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>2024-01-18</td>
+                                    <td>
+                                        <button class="btn-icon" title="View"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon" title="Contact"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon" title="End Rental"><i class="fas fa-stop"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Earnings Section -->
+                <section id="earnings" class="content-section">
+                    <div class="section-header">
+                        <h2>Earnings Overview</h2>
+                        <button class="btn btn-primary">Request Payout</button>
+                    </div>
+
+                    <div class="earnings-summary">
+                        <div class="earning-card">
+                            <h3>This Month</h3>
+                            <div class="earning-amount">₹12,500</div>
+                            <div class="earning-details">45 rental days</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>Last Month</h3>
+                            <div class="earning-amount">₹10,800</div>
+                            <div class="earning-details">38 rental days</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>Total Earnings</h3>
+                            <div class="earning-amount">₹45,000</div>
+                            <div class="earning-details">Since joining</div>
+                        </div>
+                        <div class="earning-card">
+                            <h3>Available Balance</h3>
+                            <div class="earning-amount">₹3,200</div>
+                            <div class="earning-details">Ready for payout</div>
+                        </div>
+                    </div>
+
+                    <div class="earnings-breakdown">
+                        <h3>Earnings by Vehicle</h3>
+                        <div class="breakdown-list">
+                            <div class="breakdown-item">
+                                <div class="vehicle-name">Mountain Bike Pro</div>
+                                <div class="earning-bar">
+                                    <div class="earning-fill" style="width: 85%"></div>
+                                </div>
+                                <div class="earning-amount">₹18,500</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="vehicle-name">Electric Scooter X1</div>
+                                <div class="earning-bar">
+                                    <div class="earning-fill" style="width: 92%"></div>
+                                </div>
+                                <div class="earning-amount">₹22,000</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="vehicle-name">City Cruiser</div>
+                                <div class="earning-bar">
+                                    <div class="earning-fill" style="width: 45%"></div>
+                                </div>
+                                <div class="earning-amount">₹4,500</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Maintenance Section -->
+                <section id="maintenance" class="content-section">
+                    <div class="section-header">
+                        <h2>Vehicle Maintenance</h2>
+                        <button class="btn btn-primary">Schedule Maintenance</button>
+                    </div>
+
+                    <div class="maintenance-overview">
+                        <div class="maintenance-card urgent">
+                            <div class="maintenance-header">
+                                <h3>Urgent Maintenance</h3>
+                                <span class="maintenance-count">2</span>
+                            </div>
+                            <div class="maintenance-list">
+                                <div class="maintenance-item">
+                                    <span>Mountain Bike Pro - Brake Service</span>
+                                    <span class="due-date">Due: Tomorrow</span>
+                                </div>
+                                <div class="maintenance-item">
+                                    <span>City Cruiser - Tire Replacement</span>
+                                    <span class="due-date">Overdue by 2 days</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="maintenance-card upcoming">
+                            <div class="maintenance-header">
+                                <h3>Upcoming Maintenance</h3>
+                                <span class="maintenance-count">3</span>
+                            </div>
+                            <div class="maintenance-list">
+                                <div class="maintenance-item">
+                                    <span>Electric Scooter X1 - Battery Check</span>
+                                    <span class="due-date">Due: Jan 25</span>
+                                </div>
+                                <div class="maintenance-item">
+                                    <span>Mountain Bike Pro - Chain Service</span>
+                                    <span class="due-date">Due: Jan 28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="maintenance-history">
+                        <h3>Maintenance History</h3>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vehicle</th>
+                                        <th>Service Type</th>
+                                        <th>Date</th>
+                                        <th>Cost</th>
+                                        <th>Status</th>
+                                        <th>Next Due</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mountain Bike Pro</td>
+                                        <td>General Service</td>
+                                        <td>2024-01-10</td>
+                                        <td>₹500</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                        <td>2024-04-10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Electric Scooter X1</td>
+                                        <td>Software Update</td>
+                                        <td>2024-01-05</td>
+                                        <td>₹200</td>
+                                        <td><span class="status completed">Completed</span></td>
+                                        <td>2024-07-05</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="content-section">
+                    <div class="section-header">
+                        <h2>My Profile</h2>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+
+                    <div class="profile-container">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Profile" class="profile-image">
+                                <div class="profile-info">
+                                    <h3>Mike Brown</h3>
+                                    <p>Vehicle Owner</p>
+                                    <div class="profile-rating">
+                                        <span>4.7 ⭐</span>
+                                        <span>(156 rentals)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="detail-group">
+                                    <h4>Personal Information</h4>
+                                    <div class="detail-item">
+                                        <label>Email:</label>
+                                        <span>mike.brown@example.com</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone:</label>
+                                        <span>+91 9876543216</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Address:</label>
+                                        <span>456 Business Street, Commercial Area</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-group">
+                                    <h4>Business Information</h4>
+                                    <div class="detail-item">
+                                        <label>Total Vehicles:</label>
+                                        <span>7 (5 Cycles, 2 EVs)</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Member Since:</label>
+                                        <span>December 10, 2023</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Verification Status:</label>
+                                        <span class="status verified">Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support" class="content-section">
+                    <div class="section-header">
+                        <h2>Support & Help</h2>
+                    </div>
+
+                    <div class="support-container">
+                        <div class="support-options">
+                            <div class="support-card">
+                                <i class="fas fa-phone"></i>
+                                <h3>Call Support</h3>
+                                <p>Get immediate help for urgent issues</p>
+                                <button class="btn btn-primary">Call Now</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-comments"></i>
+                                <h3>Live Chat</h3>
+                                <p>Chat with our rental support team</p>
+                                <button class="btn btn-primary">Start Chat</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>Email Support</h3>
+                                <p>Send detailed queries via email</p>
+                                <button class="btn btn-primary">Send Email</button>
+                            </div>
+                        </div>
+
+                        <div class="help-resources">
+                            <h3>Resources for Vehicle Owners</h3>
+                            <div class="resource-list">
+                                <a href="#" class="resource-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>Owner's Guide</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="resource-item">
+                                    <i class="fas fa-calculator"></i>
+                                    <span>Pricing Calculator</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="fas fa-shield-alt"></i>
+                                    <span>Insurance Information</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="resource-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Maintenance Tips</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="renting.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - EcoRide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-user"></i>
+                    <span>User Dashboard</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-section="dashboard"><i
+                                class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#book-ride" class="nav-link" data-section="book-ride"><i
+                                class="fas fa-plus-circle"></i> Book Ride</a></li>
+                    <li><a href="#my-rides" class="nav-link" data-section="my-rides"><i class="fas fa-route"></i> My
+                            Rides</a></li>
+                    <li><a href="#favorites" class="nav-link" data-section="favorites"><i class="fas fa-heart"></i>
+                            Favorites</a></li>
+                    <li><a href="#wallet" class="nav-link" data-section="wallet"><i class="fas fa-wallet"></i>
+                            Wallet</a></li>
+                    <li><a href="#profile" class="nav-link" data-section="profile"><i class="fas fa-user-cog"></i>
+                            Profile</a></li>
+                    <li><a href="#support" class="nav-link" data-section="support"><i class="fas fa-headset"></i>
+                            Support</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-secondary">Back to Website</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">User Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">1</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="/placeholder.svg?height=40&width=40" alt="User">
+                        <span>Alice Johnson</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="welcome-card">
+                        <div class="welcome-content">
+                            <h2>Welcome back, Alice!</h2>
+                            <p>Ready for your next eco-friendly ride?</p>
+                            <button class="btn btn-primary" onclick="showSection('book-ride')">Book a Ride</button>
+                        </div>
+                        <div class="welcome-image">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                    </div>
+
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>45</h3>
+                                <p>Total Rides</p>
+                                <span class="stat-change">This month: 8</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>125 kg</h3>
+                                <p>CO₂ Saved</p>
+                                <span class="stat-change positive">Great impact!</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>₹2,340</h3>
+                                <p>Total Spent</p>
+                                <span class="stat-change">Avg: ₹52/ride</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>4.9</h3>
+                                <p>Your Rating</p>
+                                <span class="stat-change positive">Excellent!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <h3>Recent Rides</h3>
+                            <div class="ride-list">
+                                <div class="ride-item">
+                                    <div class="ride-info">
+                                        <div class="ride-route">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Home → Office</span>
+                                        </div>
+                                        <div class="ride-details">
+                                            <span class="ride-time">Today, 9:15 AM</span>
+                                            <span class="ride-cost">₹45</span>
+                                        </div>
+                                    </div>
+                                    <div class="ride-type">
+                                        <i class="fas fa-bicycle"></i>
+                                    </div>
+                                </div>
+                                <div class="ride-item">
+                                    <div class="ride-info">
+                                        <div class="ride-route">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Mall → Home</span>
+                                        </div>
+                                        <div class="ride-details">
+                                            <span class="ride-time">Yesterday, 7:30 PM</span>
+                                            <span class="ride-cost">₹65</span>
+                                        </div>
+                                    </div>
+                                    <div class="ride-type">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">View All Rides</button>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" onclick="showSection('book-ride')">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Book Ride</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="repeatLastRide()">
+                                    <i class="fas fa-redo"></i>
+                                    <span>Repeat Last</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="showSection('favorites')">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Favorites</span>
+                                </button>
+                                <button class="quick-action-btn" onclick="showSection('wallet')">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>Add Money</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Book Ride Section -->
+                <section id="book-ride" class="content-section">
+                    <div class="section-header">
+                        <h2>Book a Ride</h2>
+                    </div>
+
+                    <div class="booking-container">
+                        <div class="booking-form-card">
+                            <form class="booking-form">
+                                <div class="location-inputs">
+                                    <div class="input-group">
+                                        <i class="fas fa-circle pickup-icon"></i>
+                                        <input type="text" placeholder="Pickup location" id="pickup" required>
+                                        <button type="button" class="location-btn"
+                                            onclick="getCurrentLocation('pickup')">
+                                            <i class="fas fa-crosshairs"></i>
+                                        </button>
+                                    </div>
+                                    <div class="input-group">
+                                        <i class="fas fa-map-marker-alt destination-icon"></i>
+                                        <input type="text" placeholder="Where to?" id="destination" required>
+                                    </div>
+                                </div>
+
+                                <div class="ride-options">
+                                    <h3>Choose Vehicle Type</h3>
+                                    <div class="vehicle-options">
+                                        <div class="vehicle-option active" data-type="cycle">
+                                            <i class="fas fa-bicycle"></i>
+                                            <div class="vehicle-info">
+                                                <h4>Cycle</h4>
+                                                <p>Eco-friendly • ₹5/km</p>
+                                                <span class="eta">5-8 min away</span>
+                                            </div>
+                                            <div class="vehicle-price">₹35</div>
+                                        </div>
+                                        <div class="vehicle-option" data-type="ev">
+                                            <i class="fas fa-bolt"></i>
+                                            <div class="vehicle-info">
+                                                <h4>Electric Vehicle</h4>
+                                                <p>Comfortable • ₹12/km</p>
+                                                <span class="eta">3-5 min away</span>
+                                            </div>
+                                            <div class="vehicle-price">₹84</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="booking-options">
+                                    <div class="option-group">
+                                        <label>
+                                            <input type="radio" name="booking-type" value="now" checked>
+                                            <span>Book Now</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="booking-type" value="later">
+                                            <span>Schedule Later</span>
+                                        </label>
+                                    </div>
+                                    <div class="schedule-time" style="display: none;">
+                                        <input type="datetime-local" id="schedule-time">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-large">Book Ride</button>
+                            </form>
+                        </div>
+
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Map will be displayed here</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Rides Section -->
+                <section id="my-rides" class="content-section">
+                    <div class="section-header">
+                        <h2>My Rides</h2>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Rides</option>
+                                <option>Completed</option>
+                                <option>Cancelled</option>
+                                <option>Scheduled</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rides-container">
+                        <div class="ride-card">
+                            <div class="ride-header">
+                                <div class="ride-id">#R1001</div>
+                                <div class="ride-status completed">Completed</div>
+                            </div>
+                            <div class="ride-details">
+                                <div class="ride-route">
+                                    <div class="route-point">
+                                        <i class="fas fa-circle pickup-dot"></i>
+                                        <span>123 Green Street</span>
+                                    </div>
+                                    <div class="route-line"></div>
+                                    <div class="route-point">
+                                        <i class="fas fa-map-marker-alt destination-dot"></i>
+                                        <span>Tech Park, Sector 5</span>
+                                    </div>
+                                </div>
+                                <div class="ride-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-bicycle"></i>
+                                        <span>Cycle Ride</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Today, 9:15 AM</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>15 minutes</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-rupee-sign"></i>
+                                        <span>₹45</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ride-actions">
+                                <button class="btn btn-secondary btn-sm">Book Again</button>
+                                <button class="btn btn-secondary btn-sm">Rate Rider</button>
+                            </div>
+                        </div>
+
+                        <div class="ride-card">
+                            <div class="ride-header">
+                                <div class="ride-id">#R1002</div>
+                                <div class="ride-status completed">Completed</div>
+                            </div>
+                            <div class="ride-details">
+                                <div class="ride-route">
+                                    <div class="route-point">
+                                        <i class="fas fa-circle pickup-dot"></i>
+                                        <span>City Mall</span>
+                                    </div>
+                                    <div class="route-line"></div>
+                                    <div class="route-point">
+                                        <i class="fas fa-map-marker-alt destination-dot"></i>
+                                        <span>123 Green Street</span>
+                                    </div>
+                                </div>
+                                <div class="ride-info">
+                                    <div class="info-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Electric Vehicle</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Yesterday, 7:30 PM</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>22 minutes</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-rupee-sign"></i>
+                                        <span>₹65</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ride-actions">
+                                <button class="btn btn-secondary btn-sm">Book Again</button>
+                                <button class="btn btn-secondary btn-sm">View Receipt</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Favorites Section -->
+                <section id="favorites" class="content-section">
+                    <div class="section-header">
+                        <h2>Favorite Places</h2>
+                        <button class="btn btn-primary">Add New Place</button>
+                    </div>
+
+                    <div class="favorites-grid">
+                        <div class="favorite-card">
+                            <div class="favorite-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="favorite-info">
+                                <h3>Home</h3>
+                                <p>123 Green Street, Eco City</p>
+                                <span class="favorite-usage">Used 25 times</span>
+                            </div>
+                            <div class="favorite-actions">
+                                <button class="btn btn-primary btn-sm">Book Ride</button>
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="favorite-card">
+                            <div class="favorite-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="favorite-info">
+                                <h3>Office</h3>
+                                <p>Tech Park, Sector 5</p>
+                                <span class="favorite-usage">Used 20 times</span>
+                            </div>
+                            <div class="favorite-actions">
+                                <button class="btn btn-primary btn-sm">Book Ride</button>
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="favorite-card">
+                            <div class="favorite-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="favorite-info">
+                                <h3>City Mall</h3>
+                                <p>Central Plaza, Downtown</p>
+                                <span class="favorite-usage">Used 8 times</span>
+                            </div>
+                            <div class="favorite-actions">
+                                <button class="btn btn-primary btn-sm">Book Ride</button>
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wallet Section -->
+                <section id="wallet" class="content-section">
+                    <div class="section-header">
+                        <h2>My Wallet</h2>
+                        <button class="btn btn-primary">Add Money</button>
+                    </div>
+
+                    <div class="wallet-balance">
+                        <div class="balance-card">
+                            <h3>Current Balance</h3>
+                            <div class="balance-amount">₹250</div>
+                            <p>Available for rides</p>
+                        </div>
+                    </div>
+
+                    <div class="wallet-actions">
+                        <button class="wallet-action-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Money</span>
+                        </button>
+                        <button class="wallet-action-btn">
+                            <i class="fas fa-gift"></i>
+                            <span>Redeem Coupon</span>
+                        </button>
+                        <button class="wallet-action-btn">
+                            <i class="fas fa-history"></i>
+                            <span>Transaction History</span>
+                        </button>
+                    </div>
+
+                    <div class="transaction-history">
+                        <h3>Recent Transactions</h3>
+                        <div class="transaction-list">
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-type">
+                                        <i class="fas fa-minus-circle debit"></i>
+                                        <span>Ride Payment</span>
+                                    </div>
+                                    <div class="transaction-date">Today, 9:15 AM</div>
+                                </div>
+                                <div class="transaction-amount debit">-₹45</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-type">
+                                        <i class="fas fa-plus-circle credit"></i>
+                                        <span>Wallet Top-up</span>
+                                    </div>
+                                    <div class="transaction-date">Jan 19, 2024</div>
+                                </div>
+                                <div class="transaction-amount credit">+₹500</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile" class="content-section">
+                    <div class="section-header">
+                        <h2>My Profile</h2>
+                        <button class="btn btn-primary">Edit Profile</button>
+                    </div>
+
+                    <div class="profile-container">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Profile" class="profile-image">
+                                <div class="profile-info">
+                                    <h3>Alice Johnson</h3>
+                                    <p>Premium User</p>
+                                    <div class="profile-rating">
+                                        <span>4.9 ⭐</span>
+                                        <span>(45 rides)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="detail-group">
+                                    <h4>Personal Information</h4>
+                                    <div class="detail-item">
+                                        <label>Email:</label>
+                                        <span>alice.johnson@example.com</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone:</label>
+                                        <span>+91 9876543212</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Address:</label>
+                                        <span>123 Green Street, Eco City</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-group">
+                                    <h4>Preferences</h4>
+                                    <div class="detail-item">
+                                        <label>Preferred Vehicle:</label>
+                                        <span>Cycle</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Payment Method:</label>
+                                        <span>Wallet</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Member Since:</label>
+                                        <span>January 15, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support" class="content-section">
+                    <div class="section-header">
+                        <h2>Support & Help</h2>
+                    </div>
+
+                    <div class="support-container">
+                        <div class="support-options">
+                            <div class="support-card">
+                                <i class="fas fa-phone"></i>
+                                <h3>Call Support</h3>
+                                <p>Get immediate help from our support team</p>
+                                <button class="btn btn-primary">Call Now</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-comments"></i>
+                                <h3>Live Chat</h3>
+                                <p>Chat with our support representatives</p>
+                                <button class="btn btn-primary">Start Chat</button>
+                            </div>
+                            <div class="support-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>Email Support</h3>
+                                <p>Send us your queries via email</p>
+                                <button class="btn btn-primary">Send Email</button>
+                            </div>
+                        </div>
+
+                        <div class="help-topics">
+                            <h3>Help Topics</h3>
+                            <div class="help-list">
+                                <a href="#" class="help-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>How to book a ride?</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="help-item">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Payment methods</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="help-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Safety guidelines</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="help-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Rating system</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="user.js"></script>
+</body>
+
+</html>
