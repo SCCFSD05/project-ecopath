@@ -73,6 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
         element.addEventListener("click", function () {
             const type = this.getAttribute("data-type")
             showRoleSpecificFields(type)
+            // Also update visibility of signup link and social sign-in when user type changes
+            updateAuthFormVisibility(type);
         })
     })
 })
@@ -91,6 +93,9 @@ function initializePage(userType, mode) {
 
     // Show role-specific fields
     showRoleSpecificFields(userType)
+
+    // Update visibility of signup link and social sign-in based on initial user type
+    updateAuthFormVisibility(userType);
 }
 
 // Select user type
@@ -152,10 +157,36 @@ function showRoleSpecificFields(type) {
     }
 }
 
+// Function to update visibility of signup link and social sign-in
+function updateAuthFormVisibility(userType) {
+    const signinFormFooter = document.getElementById("signinFormFooter");
+    const socialSigninSection = document.getElementById("socialSigninSection");
+    const signupForm = document.querySelector(".signup-form"); // Get signup form to hide it if admin
+
+    if (userType === "admin") {
+        if (signinFormFooter) signinFormFooter.style.display = "none";
+        if (socialSigninSection) socialSigninSection.style.display = "none";
+        if (signupForm) signupForm.style.display = "none"; // Ensure signup form is hidden for admin
+        switchToSignIn(); // Always default to sign-in for admin
+    } else {
+        if (signinFormFooter) signinFormFooter.style.display = "block";
+        if (socialSigninSection) socialSigninSection.style.display = "block";
+        // Do not touch signupForm display here, it's handled by switchForm/switchToSignUp
+    }
+}
+
+
 // Switch between forms
 function switchForm() {
     const signinForm = document.querySelector(".signin-form")
     const signupForm = document.querySelector(".signup-form")
+    const selectedUserType = document.querySelector(".user-type.active")?.getAttribute("data-type") || "user";
+
+    // Prevent switching to signup if admin is selected
+    if (selectedUserType === "admin") {
+        switchToSignIn(); // Always force sign-in for admin
+        return;
+    }
 
     if (signinForm.style.display === "none") {
         switchToSignIn()
@@ -182,6 +213,13 @@ function switchToSignIn() {
 function switchToSignUp() {
     const signinForm = document.querySelector(".signin-form")
     const signupForm = document.querySelector(".signup-form")
+    const selectedUserType = document.querySelector(".user-type.active")?.getAttribute("data-type") || "user";
+
+    // Prevent switching to signup if admin is selected
+    if (selectedUserType === "admin") {
+        switchToSignIn(); // Always force sign-in for admin
+        return;
+    }
 
     signinForm.style.display = "none"
     signupForm.style.display = "block"
@@ -301,7 +339,7 @@ function handleSignUp(e) {
         // Store user info
         const userInfo = {
             email: email,
-            name: `${firstName} ${lastName}`,
+            name: ${firstName} ${lastName},
             type: selectedUserType,
             phone: phone,
             signupTime: new Date().toISOString(),
@@ -325,18 +363,24 @@ function handleSignUp(e) {
 
 // Handle social sign in
 function handleSocialSignIn(provider) {
-    showLoading(`Connecting with ${provider}...`)
+    const selectedUserType = document.querySelector(".user-type.active")?.getAttribute("data-type") || "user";
+
+    // Prevent social sign-in for admin
+    if (selectedUserType === "admin") {
+        showNotification("Social sign-in is not available for Admin accounts.", "warning");
+        return;
+    }
+
+    showLoading(Connecting with ${provider}...)
 
     setTimeout(() => {
         hideLoading()
-        showNotification(`${provider} sign in successful!`, "success")
-
-        const selectedUserType = document.querySelector(".user-type.active")?.getAttribute("data-type") || "user"
+        showNotification(${provider} sign in successful!, "success")
 
         // Store user info
         const userInfo = {
-            email: `user@${provider.toLowerCase()}.com`,
-            name: `${provider} User`,
+            email: user@${provider.toLowerCase()}.com,
+            name: ${provider} User,
             type: selectedUserType,
             provider: provider,
             loginTime: new Date().toISOString(),
@@ -380,7 +424,7 @@ function hideLoading() {
 // Notification system
 function showNotification(message, type = "info") {
     const notification = document.createElement("div")
-    notification.className = `notification notification-${type}`
+    notification.className = notification notification-${type}
     notification.textContent = message
 
     notification.style.cssText = `
